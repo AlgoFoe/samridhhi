@@ -12,13 +12,13 @@ export default function Component() {
         </div>
         <div className="flex flex-wrap gap-7">
           {/* Product Cards */}
-          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable/>
-          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable/>
-          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable/>
-          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable/>
-          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable/>
-          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable/>
-          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable/>
+          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable />
+          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable />
+          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable />
+          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable />
+          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable />
+          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable />
+          <ProductCard avgRating={4.5} farmerName="Priyanshu Dixit" name="Paddy" price={1000} imgUrl="" isRemovable />
         </div>
       </div>
       {/* Align the Order Summary to the top */}
@@ -32,20 +32,20 @@ export default function Component() {
           <Separator />
           <div className="flex items-center justify-between">
             <span>Subtotal</span>
-            <span className="font-medium">$274.97</span>
+            <span className="font-medium">₹274.97</span>
           </div>
           <div className="flex items-center justify-between">
             <span>Shipping</span>
-            <span className="font-medium">$9.99</span>
+            <span className="font-medium">₹9.99</span>
           </div>
           <div className="flex items-center justify-between">
             <span>Discount</span>
-            <span className="font-medium text-green-500">-$20.00</span>
+            <span className="font-medium text-green-500">-₹20.00</span>
           </div>
           <Separator />
           <div className="flex items-center justify-between font-medium text-lg">
             <span>Total</span>
-            <span>$264.96</span>
+            <span>₹264.96</span>
           </div>
         </div>
         <Button size="lg" className="w-full" variant="secondary">
