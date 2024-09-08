@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/shared/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Filter } from "lucide-react"; 
+import { Separator } from "@/components/ui/separator";
 
 type CategoryType =
   | "new-products"
@@ -34,11 +35,11 @@ const dummyProducts = [
   {
     productId: '1',
     name: "Organic Fertilizer",
-    category: "animal-husbandry",
+    category: "organic-farming",
     price: 250,
     quantity: "10 kg",
     farmerName: "Farmer A",
-    imgUrl: "/images/product1.jpg",
+    imgUrl: "/images/products/img1.jpg",
     avgRating: 4.5,
     sold: false,
     seller: 1,
@@ -47,11 +48,11 @@ const dummyProducts = [
   {
     productId: '2',
     name: "Herbicide",
-    category: "animal-husbandry",
+    category: "organic-farming",
     price: 150,
     quantity: "5 L",
     farmerName: "Farmer B",
-    imgUrl: "/images/product2.jpg",
+    imgUrl: "/images/products/img2.jpg",
     avgRating: 4.2,
     sold: false,
     seller: 2,
@@ -60,11 +61,11 @@ const dummyProducts = [
   {
     productId: '3',
     name: "Fungicide Spray",
-    category: "animal-husbandry",
+    category: "fungicides",
     price: 300,
     quantity: "1 L",
     farmerName: "Farmer C",
-    imgUrl: "/images/product3.jpg",
+    imgUrl: "/images/products/img3.jpg",
     avgRating: 4.7,
     sold: false,
     seller: 3,
@@ -73,11 +74,11 @@ const dummyProducts = [
   {
     productId: '4',
     name: "Growth Promoter",
-    category: "animal-husbandry",
+    category: "growth-promoters",
     price: 120,
     quantity: "500 ml",
     farmerName: "Farmer D",
-    imgUrl: "/images/product4.jpg",
+    imgUrl: "/images/products/img1.jpg",
     avgRating: 4.1,
     sold: false,
     seller: 4,
@@ -90,7 +91,7 @@ const dummyProducts = [
     price: 400,
     quantity: "20 kg",
     farmerName: "Farmer E",
-    imgUrl: "/images/product5.jpg",
+    imgUrl: "/images/products/img3.jpg",
     avgRating: 4.3,
     sold: false,
     seller: 5,
@@ -99,11 +100,11 @@ const dummyProducts = [
   {
     productId: '6',
     name: "Seed Pack",
-    category: "animal-husbandry",
+    category: "seeds",
     price: 80,
     quantity: "1 kg",
     farmerName: "Farmer F",
-    imgUrl: "/images/product6.jpg",
+    imgUrl: "/images/products/img1.jpg",
     avgRating: 4.6,
     sold: false,
     seller: 6,
@@ -115,10 +116,9 @@ const Category = ({ params }: { params: { category: string } }) => {
   const { category } = params;
   const [searchTerm, setSearchTerm] = useState("");
 
-  if (!validCategories.includes(category as CategoryType)){
+  if (!validCategories.includes(category as CategoryType)) {
     return <div className="text-center mt-10 text-xl">Page Not Found</div>;
   }
-
   const filteredProducts = dummyProducts.filter(
     (product) =>
       product.category === category &&
@@ -142,15 +142,19 @@ const Category = ({ params }: { params: { category: string } }) => {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
-        {filteredProducts.map((product, index) => (
-          <div key={product.productId} className="w-full">
-            <ProductCard {...product} />
-            {index !== filteredProducts.length - 1 && (
-              <hr className="border-t border-gray-300" />
-            )}
-          </div>
-        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full">
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product, index) => (
+            <div key={product.productId} className="w-full md:mb-4">
+              <ProductCard {...product} />
+              {index !== filteredProducts.length - 1 && (
+                <Separator className="sm:block md:hidden" />
+              )}
+            </div>
+          ))
+        ) : (
+          <div className="col-span-full text-center text-gray-600 mt-8">No products found</div>
+        )}
       </div>
     </div>
   );
