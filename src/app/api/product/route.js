@@ -1,5 +1,5 @@
-import { Products } from "@/models/product"
-import { Users } from "@/models/user"
+import { Products } from "../../../models/product"
+import { Users } from "../../../models/user"
 
 export async function POST(req, res) {
     try {

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
-import { Users } from '@/models/user'
-import { ConnectDB } from '@/lib/db';
+import { Users } from '../../../../models/user'
+import { ConnectDB } from '../../../../lib/db';
 
 const bcrypt = require("bcryptjs");
 const { customAlphabet } = require("nanoid")
