@@ -16,24 +16,23 @@ const Section2: React.FC = () => {
     { id: 4, title: "Issue 4", content: "Details about Issue 4..." },
     { id: 5, title: "Issue 5", content: "Details about Issue 5..." },
     { id: 6, title: "Issue 6", content: "Details about Issue 6..." },
-    { id: 7, title: "Issue 7", content: "Details about Issue 7..." },
   ];
 
   return (
-    <section className="p-2 h-screen flex justify-center items-center bg-[url('/sec2_bg3.jpg')] bg-cover bg-center bg-no-repeat filter">
+    <section className="p-2 h-screen flex justify-center items-center  selection:bg-customGreen">
       <div className="p-4 w-full ">
         <h2 className="text-5xl font-semibold mb-4 text-center">Key Issues</h2>
-        <div className="flex flex-col md:flex-row ">
+        <div className="flex flex-col md:flex-row justify-center">
           {/* Keys List */}
-          <div className="md:w-1/3">
+          <div className="md:w-1/6 ">
             {keys.map((key) => (
               <button
                 key={key.id}
                 onClick={() => setSelectedKey(key)}
-                className={`w-full text-left font-bold p-4 rounded-l-3xl transition-colors border-b-2 ${
+                className={`w-full text-left font-bold p-5 rounded-l-3xl transition-colors border-b-2 ${
                   selectedKey?.id === key.id
                     ? "bg-gray-900 text-lime-100  "
-                    : " text-lime-100  hover:bg-gray-900 rounded-r-3xl"
+                    : " text-lime-100  hover:bg-gray-900 bg-opacity-5 blur-sm hover:blur-none"
                 }`}
               >
                 {key.title}
@@ -43,13 +42,13 @@ const Section2: React.FC = () => {
 
           {/* Details Section */}
           {keys.map((key) => (
-          <div className={`md:w-2/3  ${
+          <div className={`md:w-2/4 rounded-full${
                   selectedKey?.id === key.id
                     ? "bg-gray-900 text-lime-100 "
-                    : "text-lime-100  hover:bg-gray-900 hidden"
+                    : "text-lime-100  hover:bg-gray-900 hidden "
                 }`}>
             {selectedKey ? (
-              <div className="bg-gray-900 p-6 rounded-r-2xl border-none h-full">
+              <div className="bg-gray-900 p-6 h-full rounded-r-3xl ">
                 <h2 className="text-2xl font-bold mb-4">{selectedKey.title}</h2>
                 <p>{selectedKey.content}</p>
               </div>

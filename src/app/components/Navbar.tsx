@@ -68,7 +68,7 @@ const HeaderTop: React.FC = () => {
 
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 ">
             <button
-              className="lg:hidden p-2 focus:outline-none hover:bg-gray-300 border float-left"
+              className="lg:hidden p-2 focus:outline-none hover:bg-gray-300 border float-left ml-auto"
               onClick={() => setIsNavOpen(!isNavOpen)}
               aria-controls="navbarSupportedContent"
               aria-expanded={isNavOpen}
