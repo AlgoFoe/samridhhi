@@ -120,7 +120,7 @@ export default function Component() {
                             </div>
                             <div className="text-sm leading-loose text-muted-foreground">
                                 <p>
-                                    I've been using these headphones for a few weeks now and I'm really impressed with the sound quality and noise-cancelling capabilities. They're comfortable to wear for long periods and the battery life is excellent. Highly recommended!
+                                    I&APOSve been using these headphones for a few weeks now and I&APOSm really impressed with the sound quality and noise-cancelling capabilities. They&APOSre comfortable to wear for long periods and the battery life is excellent. Highly recommended!
                                 </p>
                             </div>
                         </div>
@@ -143,7 +143,7 @@ export default function Component() {
                             </div>
                             <div className="text-sm leading-loose text-muted-foreground">
                                 <p>
-                                    I recently purchased these headphones and they've been a game-changer for me. The sound quality is incredible, and the noise-cancelling feature is a lifesaver during my commute. The only downside is that they can get a bit uncomfortable after wearing them for extended periods, but overall I'm very satisfied with my purchase.
+                                    I recently purchased these headphones and they&APOSve been a game-changer for me. The sound quality is incredible, and the noise-cancelling feature is a lifesaver during my commute. The only downside is that they can get a bit uncomfortable after wearing them for extended periods, but overall I&APOSm very satisfied with my purchase.
                                 </p>
                             </div>
                         </div>
