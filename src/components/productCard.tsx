@@ -37,10 +37,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <CardHeader className="max-md:w-44 max-md:p-3">
         <div className="w-full h-40 max-md:rounded-lg md:rounded-t-lg bg-gray-300">
           <Image
-            src={imgUrl}
+            // src={imgUrl}
+            src="/images/products/img3.jpg"
             alt={name}
-            width={40}
-            height={40}
+            width={140}
+            height={140}
             className="w-full h-full object-cover rounded-lg"
           />
         </div>
