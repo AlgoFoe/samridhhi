@@ -32,6 +32,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   isSold = false,
   isRemovable = false
 }) => {
+
+  console.log(imgUrl);
   return (
     <Card className={`w-full md:w-80 max-md:flex max-md:items-center max-md:rounded-none ${className}`}>
       <CardHeader className="max-md:w-44 max-md:p-3">

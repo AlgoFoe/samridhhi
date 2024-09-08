@@ -30,9 +30,9 @@ export default function Component() {
                 <div className="col-span-6 flex flex-col-reverse md:flex-row max-h-[500px] overflow-x-auto no-scrollbar">
                     <div className="w-full md:w-20 h-24 md:h-full mr-3 flex md:flex-col overflow-auto no-scrollbar">
                         {
-                            imgs.map(img => {
+                            imgs.map((img,index) => {
                                 return (
-                                    <div className="md:w-full aspect-square rounded-lg md:my-2 max-md:h-full max-md:mx-2 flex-none cursor-pointer" onClick={() => changeImage(img)}>
+                                    <div className="md:w-full aspect-square rounded-lg md:my-2 max-md:h-full max-md:mx-2 flex-none cursor-pointer" onClick={() => changeImage(img)} key={index}>
                                         <Image src={img} alt="" width={140} height={140} className="w-full h-full object-contain" />
                                     </div>
                                 )
