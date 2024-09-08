@@ -139,7 +139,7 @@ export default function Component() {
                             </div>
                             <div className="text-sm leading-loose text-muted-foreground">
                                 <p>
-                                    Mary's commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.Mary's commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.Mary's commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.Mary's commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.Mary's commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.
+                                    Mary commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.Mary commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.Mary commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.Mary commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.Mary commitment to organic farming and her passion for community education make her a true leader in sustainable agriculture.
                                 </p>
                             </div>
                         </div>
