@@ -11,7 +11,7 @@ const MarketplacePage: React.FC = () => {
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
           <div className="flex items-center justify-center">
-            <Image src="" alt="Logo" className="h-10 w-auto" />
+            <Image src="/images/logo/logo.png" width={140} height={140} alt="Logo" className="h-14 w-auto " />
             <input
               type="text"
               placeholder="Search"
