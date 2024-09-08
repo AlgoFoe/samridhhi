@@ -4,16 +4,16 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const categories = [
-  { name: 'New Products', image: '/images/categories/new-products.png' },
-  { name: 'Organic Farming', image: '/images/categories/organic-farming.png' },
-  { name: 'Herbicides', image: '/images/categories/herbicides.png' },
-  { name: 'Fungicides', image: '/images/categories/fungicides.png' },
-  { name: 'Insecticides', image: '/images/categories/insecticides.png' },
-  { name: 'Viricides', image: '/images/categories/viricides.png' },
-  { name: 'Growth Promoters', image: '/images/categories/growth-promoters.png' },
-  { name: 'Seeds', image: '/images/categories/seeds.png' },
-  { name: 'Nutrients', image: '/images/categories/nutrients.png' },
-  { name: 'Animal Husbandry', image: '/images/categories/animal-husbandry.png' },
+  { name: 'New Products', image: '/images/categories/newproducts.jpg' },
+  { name: 'Organic Farming', image: '/images/categories/organic-farming.jpg' },
+  { name: 'Herbicides', image: '/images/categories/herbicides.jpg' },
+  { name: 'Fungicides', image: '/images/categories/fungicides.jpg' },
+  { name: 'Insecticides', image: '/images/categories/insecticides.jpg' },
+  { name: 'Viricides', image: '/images/categories/viricides.jpg' },
+  { name: 'Growth Promoters', image: '/images/categories/growth-promoters.jpg' },
+  { name: 'Seeds', image: '/images/categories/seeds.jpg' },
+  { name: 'Nutrients', image: '/images/categories/nutrients.jpg' },
+  { name: 'Animal Husbandry', image: '/images/categories/animal-husbandry.jpg' },
 ];
 
 const Categories: React.FC = () => {
@@ -21,6 +21,7 @@ const Categories: React.FC = () => {
   const handleClick = (e: React.MouseEvent<HTMLDivElement>,category:string) => {
     e.preventDefault();
     const formattedCategory = category.replace(/\s/g, '-');
+
     router.push(`/marketplace/${formattedCategory.toLowerCase()}`);
   };
   return (
@@ -30,7 +31,7 @@ const Categories: React.FC = () => {
         {categories.map((category) => (
           <div key={category.name} className="flex flex-col items-center" onClick={(e)=>handleClick(e,category.name)}>
             <div className="w-28 h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden shadow-md">
-              <Image src={""} alt={category.name} width={40} height={40} className="w-full h-full object-contain" />
+              <Image src={category.image} alt={category.name} width={140} height={140} className="w-full h-full object-contain" />
             </div>
             <h3 className="mt-2 text-lg font-semibold text-center">{category.name}</h3>
           </div>

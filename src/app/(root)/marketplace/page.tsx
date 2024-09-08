@@ -35,7 +35,7 @@ const MarketplacePage: React.FC = () => {
       <Categories/>
       <TopSellers/>
       <RecentlyAdded/>
-      <section className="bg-[#114232] text-white text-center py-6 mt-6">
+      <section className="bg-[#289b75] text-white text-center py-6 mt-6">
         <h2 className="text-xl font-semibold">
           The Best Place for Farmers to Buy and Sell Agricultural Products
         </h2>

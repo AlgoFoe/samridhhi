@@ -41,8 +41,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <Image
             src={imgUrl}
             alt={name}
-            width={40}
-            height={40}
+            width={140}
+            height={140}
             className="w-full h-full object-cover rounded-lg"
           />
         </div>
@@ -70,7 +70,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </div>
         </CardContent>
         <CardFooter className="max-md:flex max-md:items-start max-md:pr-0 max-md:pl-0 max-md:pt-0">
-          <Button className="bg-[#114232] w-full font-semibold" disabled={sold}>
+          <Button className="w-full font-semibold" disabled={sold}>
             <ShoppingCart className="mr-2 h-4 w-4" /> {sold ? "Sold Out" : "Add to cart"}
           </Button>
         </CardFooter>

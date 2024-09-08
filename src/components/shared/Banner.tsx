@@ -8,18 +8,29 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import { Button } from "../ui/button";
 
 const Banner: React.FC = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
   const [direction, setDirection] = useState<"forward" | "backward">("forward");
+
+  // Array of image URLs for the banners
+  const images = [
+    "/images/banner/banner1.png",
+    "/images/banner/banner2.png",
+    "/images/banner/banner3.png",
+    "/images/banner/banner1.png",
+    "/images/banner/banner3.png",
+  ];
+
   useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
+
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
+
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
@@ -52,19 +63,17 @@ const Banner: React.FC = () => {
     <div className="relative w-full h-64">
       <Carousel className="w-full h-full relative" setApi={setApi}>
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {images.map((image, index) => (
             <CarouselItem key={index}>
               <div
                 className="relative w-full h-64 bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: `url('/images/banner${index + 1}.jpg')`,
+                  backgroundImage: `url(${image})`,
                 }}
               >
                 <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative z-10 flex items-center justify-center h-full">
-                  <button className="bg-[#114232] text-white px-6 py-3 rounded-lg shadow-lg">
-                    Shop Now{current}
-                  </button>
+                  <Button>Shop Now</Button>
                 </div>
               </div>
             </CarouselItem>
