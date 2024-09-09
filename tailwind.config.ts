@@ -8,6 +8,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      md: "768px", // Minimum width for medium screens (768px and above)
+      "max-md": { max: "767px" }, // Maximum width for screens smaller than 768px
+    },
     extend: {
       colors: {
         background: "hsl(var(--background))",
