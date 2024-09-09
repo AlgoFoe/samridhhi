@@ -29,11 +29,10 @@ const Section2: React.FC = () => {
               <button
                 key={key.id}
                 onClick={() => setSelectedKey(key)}
-                className={`w-full text-left font-bold p-5 rounded-l-3xl transition-colors border-b-2 ${
-                  selectedKey?.id === key.id
+                className={`w-full text-left font-bold p-5 rounded-l-3xl transition-colors border-b-2 ${selectedKey?.id === key.id
                     ? "bg-gray-900 text-lime-100  "
                     : " text-lime-100  hover:bg-gray-900 bg-opacity-5 blur-sm hover:blur-none"
-                }`}
+                  }`}
               >
                 {key.title}
               </button>
@@ -41,23 +40,22 @@ const Section2: React.FC = () => {
           </div>
 
           {/* Details Section */}
-          {keys.map((key) => (
-          <div className={`md:w-2/4 rounded-full${
-                  selectedKey?.id === key.id
-                    ? "bg-gray-900 text-lime-100 "
-                    : "text-lime-100  hover:bg-gray-900 hidden "
-                }`}>
-            {selectedKey ? (
-              <div className="bg-gray-900 p-6 h-full rounded-r-3xl ">
-                <h2 className="text-2xl font-bold mb-4">{selectedKey.title}</h2>
-                <p>{selectedKey.content}</p>
-              </div>
-            ) : (
-              <div className="bg-gray-200  p-6 rounded-lg h-full flex items-center justify-center">
-                <p>Select a key to view details</p>
-              </div>
-            )}
-          </div>
+          {keys.map((key,index) => (
+            <div className={`md:w-2/4 rounded-full${selectedKey?.id === key.id
+                ? "bg-gray-900 text-lime-100 "
+                : "text-lime-100  hover:bg-gray-900 hidden "
+              }`} key={index}>
+              {selectedKey ? (
+                <div className="bg-gray-900 p-6 h-full rounded-r-3xl ">
+                  <h2 className="text-2xl font-bold mb-4">{selectedKey.title}</h2>
+                  <p>{selectedKey.content}</p>
+                </div>
+              ) : (
+                <div className="bg-gray-200  p-6 rounded-lg h-full flex items-center justify-center">
+                  <p>Select a key to view details</p>
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>
