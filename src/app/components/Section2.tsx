@@ -21,7 +21,7 @@ const Section2: React.FC = () => {
   return (
     <section className="p-2 h-screen flex justify-center items-center  selection:bg-customGreen">
       <div className="p-4 w-full ">
-        <h2 className="text-5xl font-semibold mb-4 text-center">Key Issues</h2>
+        <h2 className="text-5xl font-semibold mb-4 text-center text-lime-100">Key Issues</h2>
         <div className="flex flex-col md:flex-row justify-center">
           {/* Keys List */}
           <div className="md:w-1/6 ">
@@ -30,8 +30,8 @@ const Section2: React.FC = () => {
                 key={key.id}
                 onClick={() => setSelectedKey(key)}
                 className={`w-full text-left font-bold p-5 rounded-l-3xl transition-colors border-b-2 ${selectedKey?.id === key.id
-                    ? "bg-gray-900 text-lime-100  "
-                    : " text-lime-100  hover:bg-gray-900 bg-opacity-5 blur-sm hover:blur-none"
+                    ? "bg-lime-200 text-green-800  "
+                    : " text-green-800  hover:bg-lime-200 bg-opacity-5 blur-sm hover:blur-none"
                   }`}
               >
                 {key.title}
@@ -42,11 +42,11 @@ const Section2: React.FC = () => {
           {/* Details Section */}
           {keys.map((key,index) => (
             <div className={`md:w-2/4 rounded-full${selectedKey?.id === key.id
-                ? "bg-gray-900 text-lime-100 "
-                : "text-lime-100  hover:bg-gray-900 hidden "
+                ? "bg-lime-200 text-green-800 "
+                : "text-green-800  hover:bg-lime-100 hidden "
               }`} key={index}>
               {selectedKey ? (
-                <div className="bg-gray-900 p-6 h-full rounded-r-3xl ">
+                <div className="bg-lime-200 p-6 h-full rounded-r-3xl ">
                   <h2 className="text-2xl font-bold mb-4">{selectedKey.title}</h2>
                   <p>{selectedKey.content}</p>
                 </div>
