@@ -7,6 +7,7 @@ import { IoLanguageOutline } from "react-icons/io5";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaHome } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
+import Image from "next/image"
 import {
   Select,
   SelectContent,
@@ -43,7 +44,7 @@ const HeaderTop: React.FC = () => {
       }`}
     >
       <a href="#" className="flex items-center mb-4 md:mb-0">
-        <img src="/logo2.png" alt="Logo" className="w-20 h-auto bg-contain" />
+        <Image src="/logo2.png" alt="Logo" width={140} height={140} className="w-20 h-auto bg-contain" />
       </a>
       <nav className="flex-1 w-full">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-end p-2 space-y-4 md:space-y-0 md:space-x-4 ">
