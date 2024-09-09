@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     screens: {
+      sm: '640px',
+      lg: '1024px',
+      xl: '1280px',
       md: "768px", // Minimum width for medium screens (768px and above)
       "max-md": { max: "767px" }, // Maximum width for screens smaller than 768px
     },
