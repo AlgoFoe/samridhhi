@@ -19,7 +19,7 @@ const Section2: React.FC = () => {
   ];
 
   return (
-    <section className="p-2 h-screen flex justify-center items-center  selection:bg-customGreen">
+    <section className="p-2 h-screen flex justify-center items-center selection:bg-customGreen">
       <div className="p-4 w-full ">
         <h2 className="text-5xl font-semibold mb-4 text-center text-lime-100">Key Issues</h2>
         <div className="flex flex-col md:flex-row justify-center">
@@ -29,11 +29,11 @@ const Section2: React.FC = () => {
               <button
                 key={key.id}
                 onClick={() => setSelectedKey(key)}
+                onDoubleClick={()=>setSelectedKey(null)}
                 className={`w-full text-left font-bold p-5 rounded-l-3xl transition-colors border-b-2 ${selectedKey?.id === key.id
-                    ? "bg-lime-200 text-green-800  "
-                    : " text-green-800  hover:bg-lime-200 bg-opacity-5 blur-sm hover:blur-none"
-                  }`}
-              >
+                    ? "bg-lime-200 text-green-800"
+                    : " text-green-800  hover:bg-lime-200 bg-opacity-5 blur-sm hover:blur-none rounded-r-3xl"
+                  }`}>
                 {key.title}
               </button>
             ))}
