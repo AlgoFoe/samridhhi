@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           </a>
           <a href="#" className="flex items-center">
             <Image
-              src="/digital-india-Logo.png"
+              src="/digital-india-logo.png"
               alt="Digital India Logo"
               width={140}
               height={140}
