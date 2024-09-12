@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
         {/* Footer Links and Text */}
         <div className="text-center text-sm text-gray-600">
           <p className="mb-2">
-            © 2024 Your Company Name. All Rights Reserved.
+            © 2024 Samridhhi. All Rights Reserved.
           </p>
           <p className="mb-2">
             <a href="#" className="hover:underline">
