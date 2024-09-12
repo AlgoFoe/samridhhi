@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
               Contact Us
             </a>
           </p>
-          <p>Made with ♥ by Your Company</p>
+          <p>Made with ♥ by Team Samridhhi</p>
         </div>
       </div>
     </footer>
