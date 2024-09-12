@@ -34,20 +34,19 @@ const HeaderTop: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   return (
     <div
-      className={`w-full text-lime-100 flex flex-col md:flex-row items-center justify-between px-4 py-2 transition-colors duration-300 ${
+      className={`w-full text-lime-100 flex flex-col md:flex-row items-center justify-between px-4 py-2 transition-colors duration-300 sm:flex-row xsm:flex-row ${
         scrolled
           ? "bg-gray-900 " //bg-emerald-800
           : "bg-gradient-to-b from-black-500 to-black-300"
       }`}
     >
-      <a href="#" className="flex items-center mb-4 md:mb-0">
-        <Image src="/logo2.png" alt="Logo" width={140} height={140} className="w-20 h-auto bg-contain" />
+      <a href="#" className="flex items-center mb-4 md:mb-0 ">
+        <Image src="/logo2.png" alt="Logo" width={140} height={140} className="w-20 h-auto bg-contain " />
       </a>
       <nav className="flex-1 w-full ">
-        <div className="container mx-auto flex flex-col w-full md:flex-row items-center justify-end p-2 space-y-4 md:space-y-0 md:space-x-4 ">
+        <div className="container mx-auto flex flex-col w-full md:flex-row items-center justify-end p-2 space-y-4 md:space-y-0 md:space-x-4 sm:flex-row xsm:flex-row">
           {/* Search Form */}
           <form className="w-full md:w-1/2 flex items-center justify-end ">
             <Input
@@ -67,13 +66,12 @@ const HeaderTop: React.FC = () => {
           </form>
           {/* Links */}
 
-          <div className=" flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 justify-end justify-items-end">
+          <div className={` flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 justify-end justify-items-end sm:flex-row sm:flex-nowrap sm:justify-start `}>
             <button
-              className="lg:hidden p-2 focus:outline-none hover:bg-gray-300 float-left ml-auto"
+              className="lg:hidden p-2 focus:outline-none hover:bg-gray-300 ml-auto "
               onClick={() => setIsNavOpen(!isNavOpen)}
               aria-controls="navbarSupportedContent"
-              aria-expanded={isNavOpen}
-            >
+              aria-expanded={isNavOpen}>
               <span className="sr-only">Toggle navigation</span>
               <svg
                 className="w-6 h-6"
@@ -93,9 +91,12 @@ const HeaderTop: React.FC = () => {
             <div
               id="navbarSupportedContent"
               className={`lg:flex lg:items-center lg:space-x-4 flex-col lg:flex-row w-full ${
-                isNavOpen ? "block" : "hidden"
-              }`}
-            >
+                isNavOpen ? "block w-screen absolute sm:left-0 md:-left-4 sm:top-24 xsm:top-20 xsm:align-baseline xsm:w-screen xsm:left-0 md:top-16"  : "hidden"
+              } ${scrolled
+                ? "bg-gray-900 " //bg-emerald-800
+                : "bg-gradient-to-b from-black-500 to-black-300"}` 
+            }
+              >
               <a
                 href="#"
                 className="block py-2 px-4 hover:bg-neutral-700 flex items-center justify-between"
