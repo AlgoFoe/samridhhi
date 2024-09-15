@@ -4,17 +4,18 @@ import { FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white p-8 border-t">
-      <div className="container mx-auto">
+    <footer className="bg-black p-8 border-t text-white ">
+
+      <div className="container mx-auto min-w-full">
         {/* Logo Section */}
-        <div className="flex flex-wrap justify-evenly items-center mb-8">
+        <div className="flex flex-wrap justify-evenly items-center mb-8 w-full space-y-2">
           <a href="#" className="flex items-center">
             <Image
-              src="/ministryLogo.svg"
+              src="/Ministry.png"
               alt="Ministry Logo"
               width={140}
               height={140}
-              className="w-20 h-auto bg-contain"
+              className="w-20 h-auto bg-white bg-contain fill-white p-2"
             />
           </a>
           <a href="#" className="flex items-center">
@@ -23,7 +24,7 @@ const Footer: React.FC = () => {
               alt="Government of India Logo"
               width={140}
               height={140}
-              className="w-20 h-auto bg-contain"
+              className="w-20 h-auto bg-contain bg-white p-2"
             />
           </a>
           <a href="#" className="flex items-center">
@@ -37,7 +38,7 @@ const Footer: React.FC = () => {
           </a>
           <a href="#" className="flex items-center">
             <Image
-              src="/digital-india-Logo.png"
+              src="/digital-india-logo.png"
               alt="Digital India Logo"
               width={140}
               height={140}
@@ -61,7 +62,7 @@ const Footer: React.FC = () => {
             href="https://www.linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900"
+            className=" hover:text-gray-900"
           >
             <FaLinkedin size={24} />
           </a>
@@ -69,7 +70,7 @@ const Footer: React.FC = () => {
             href="https://www.youtube.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-red-600"
+            className=" hover:text-red-600"
           >
             <FaYoutube size={24} />
           </a>
@@ -77,31 +78,31 @@ const Footer: React.FC = () => {
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-pink-500"
+            className=" hover:text-pink-500"
           >
             <FaInstagram size={24} />
           </a>
         </div>
 
         {/* Footer Links and Text */}
-        <div className="text-center text-sm text-gray-600">
+        <div className="text-center text-sm ">
           <p className="mb-2">
-            © 2024 Your Company Name. All Rights Reserved.
+          Copyright © 2024 All rights reserved.
           </p>
           <p className="mb-2">
             <a href="#" className="hover:underline">
               Privacy Policy
-            </a>{" "}
-            |{" "}
+            </a>
+            |
             <a href="#" className="hover:underline">
               Terms of Service
-            </a>{" "}
-            |{" "}
+            </a>
+            |
             <a href="#" className="hover:underline">
               Contact Us
             </a>
           </p>
-          <p>Made with ♥ by Your Company</p>
+          <p>Made with <span className="text-red-600">♥</span> by Team Samridhhi</p>
         </div>
       </div>
     </footer>

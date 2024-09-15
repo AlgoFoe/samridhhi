@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
   return (
-    <main className="flex-grow min-h-screen min-w-screen bg-[url('/sec2_bg3.jpg')] bg-cover bg-center bg-fixed bg-no-repeat">
+    <main className="flex-grow min-h-screen min-w-screen bg-[url('/bg.jpg')] bg-cover bg-center bg-fixed bg-no-repeat">
       <Header />
       <Section1 />
       <Section2 />

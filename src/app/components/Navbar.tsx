@@ -28,45 +28,56 @@ const HeaderTop: React.FC = () => {
         setScrolled(false);
       }
     };
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setIsNavOpen(false);
+      }
+    };
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <div
-      className={`w-full text-lime-100 flex flex-col md:flex-row items-center justify-between px-4 py-2 transition-colors duration-300 sm:flex-row xsm:flex-row ${
+      className={`w-full text-lime-100 flex flex-col md:flex-row items-center justify-between py-2 transition-colors duration-300 sm:flex-row xsm:flex-row ${
         scrolled
-          ? "bg-gray-900 " //bg-emerald-800
-          : "bg-gradient-to-b from-black-500 to-black-300"
-      }`}
-    >
-      <a href="#" className="flex items-center mb-4 md:mb-0 ">
-        <Image src="/logo2.png" alt="Logo" width={140} height={140} className="w-20 h-auto bg-contain " />
+          ? "bg-black bg-opacity-75" //bg-emerald-800
+          : "backdrop-blur-lg"
+      }
+      ${
+           isNavOpen ?"bg-black bg-opacity-75" //bg-emerald-800
+          : "backdrop-blur-lg "
+      }`}>
+        
+      <a href="#" className="flex items-center md:mb-0 ">
+        <Image src="/logo2.png" alt="Logo" width={140} height={140} className="w-24 h-auto bg-contain " />
       </a>
-      <nav className="flex-1 w-full ">
-        <div className="container mx-auto flex flex-col w-full md:flex-row items-center justify-end p-2 space-y-4 md:space-y-0 md:space-x-4 sm:flex-row xsm:flex-row">
-          {/* Search Form */}
-          <form className="w-full md:w-1/2 flex items-center justify-end ">
+
+      <nav className="flex-1 w-full">
+        <div className="flex flex-row w-full items-center justify-end md:space-y-0 md:space-x-4 ">
+          
+          <form className="w-full md:w-1/2 flex items-center justify-end " >
             <Input
               type="search"
               placeholder="Search"
-              className="w-full md:w-3/4 text-white rounded-tr-none rounded-br-none border-r-0"
+              className="w-full md:w-3/4 text-lime-100 rounded-tr-none rounded-br-none border-r-0"
             />
             <Button
               type="submit"
-              className="rounded-tl-none rounded-bl-none border-l-0 flex flex-row justify-between "
+              className="rounded-tl-none rounded-bl-none border-l-0 flex flex-row justify-between"
               variant="green"
             >
-              <span className="p-2">Search</span>
-
               <FaSearch />
             </Button>
           </form>
-          {/* Links */}
+          
 
-          <div className={` flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 justify-end justify-items-end sm:flex-row sm:flex-nowrap sm:justify-start `}>
             <button
               className="lg:hidden p-2 focus:outline-none hover:bg-gray-300 ml-auto "
               onClick={() => setIsNavOpen(!isNavOpen)}
@@ -90,29 +101,26 @@ const HeaderTop: React.FC = () => {
             </button>
             <div
               id="navbarSupportedContent"
-              className={`lg:flex lg:items-center lg:space-x-4 flex-col lg:flex-row w-full ${
-                isNavOpen ? "block w-screen absolute sm:left-0 md:-left-4 sm:top-24 xsm:top-20 xsm:align-baseline xsm:w-screen xsm:left-0 md:top-16"  : "hidden"
-              } ${scrolled
-                ? "bg-gray-900 " //bg-emerald-800
-                : "bg-gradient-to-b from-black-500 to-black-300"}` 
+              className={`lg:flex lg:items-center lg:space-x-4 flex-col lg:flex-row w-fit ${
+                isNavOpen ? "block w-screen absolute sm:top-5rem md:top-5rem xsm:top-20 xsm:align-baseline xsm:w-screen xsm:left-0 sm:left-0 md:-left-4 bg-black bg-opacity-75" : "hidden relative"} ` 
             }
               >
               <a
                 href="#"
-                className="block py-2 px-4 hover:bg-neutral-700 flex items-center justify-between"
+                className="py-2 px-4 hover:bg-neutral-700 flex items-center justify-between "
               >
                 <span className="mx-1 text-1xl">Home</span>
                 <FaHome />
               </a>
               <a
                 href="#"
-                className="block py-2 px-4 hover:bg-neutral-700 flex items-center justify-between"
+                className="py-2 px-4 hover:bg-neutral-700 flex items-center justify-between "
               >
                 <span className="mx-1 text-1xl">Link</span>
               </a>
               <a
                 href="#"
-                className="block py-2 px-4 hover:bg-neutral-700 flex items-center justify-between"
+                className="py-2 px-4 hover:bg-neutral-700 flex items-center justify-between "
               >
                 <Select>
                   <SelectTrigger className="w-[180px]">
@@ -133,14 +141,14 @@ const HeaderTop: React.FC = () => {
               </a>
               <a
                 href="#"
-                className="block py-2 px-4 hover:bg-neutral-700 flex flex-row items-center justify-between"
+                className="py-2 px-4 hover:bg-neutral-700 flex flex-row items-center justify-between "
               >
                 <span className="mx-1">Login</span>
                 <IoIosLogIn className="text-2xl" />
               </a>
               <a
                 href="#"
-                className="block py-2 px-4 flex items-center justify-between"
+                className="py-2 px-4 flex items-center justify-between"
               >
                 <Avatar>
                   <AvatarImage src="https://github.com/shadcn.png" />
@@ -148,7 +156,6 @@ const HeaderTop: React.FC = () => {
                 </Avatar>
               </a>
             </div>
-          </div>
         </div>
       </nav>
     </div>

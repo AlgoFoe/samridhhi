@@ -7,8 +7,6 @@ type KeyItem = {
 };
 
 const Section2: React.FC = () => {
-  const [selectedKey, setSelectedKey] = useState<KeyItem | null>(null);
-
   const keys: KeyItem[] = [
     { id: 1, title: "Issue 1", content: "Details about Issue 1..." },
     { id: 2, title: "Issue 2", content: "Details about Issue 2..." },
@@ -18,43 +16,50 @@ const Section2: React.FC = () => {
     { id: 6, title: "Issue 6", content: "Details about Issue 6..." },
   ];
 
+  // Initialize selectedKey with the first key item
+  const [selectedKey, setSelectedKey] = useState<KeyItem>(keys[0]);
+
   return (
-    <section className="p-2 h-screen flex justify-center items-center selection:bg-customGreen">
-      <div className="p-4 w-full ">
-        <h2 className="text-5xl font-semibold mb-4 text-center text-lime-100">Key Issues</h2>
-        <div className="flex flex-col md:flex-row justify-center">
+    <section className="p-2 h-screen flex justify-center items-center selection:bg-customGreen bg-black bg-opacity-60 border-t-8 border-yellow-300">
+      <div className="p-4 w-full min-h-fit">
+        <h2 className="text-5xl sm:text-5xl md:text-6xl lg:text-8xl xsm:text-3xl font-semibold text-center text-lime-200 mb-7 py-3">
+          Key Issues
+        </h2>
+        <div className="flex flex-col md:flex-row sm:flex-row xsm:flex-row xsm:text-xs justify-center text-4xl">
           {/* Keys List */}
-          <div className="md:w-1/6 ">
+          <div className="md:w-2/12 sm:w-3/12 xsm:flex-row xsm:w-2/5 md:text-xl">
             {keys.map((key) => (
               <button
                 key={key.id}
                 onClick={() => setSelectedKey(key)}
-                onDoubleClick={()=>setSelectedKey(null)}
-                className={`w-full text-left font-bold p-5 rounded-l-3xl transition-colors border-b-2 ${selectedKey?.id === key.id
-                    ? "bg-lime-200 text-green-800"
-                    : " text-green-800  hover:bg-lime-200 bg-opacity-5 blur-sm hover:blur-none rounded-r-3xl"
-                  }`}>
+                onDoubleClick={() => setSelectedKey(null)}
+                className={`w-full text-left font-bold p-5 rounded-l-3xl transition-colors ${
+                  selectedKey?.id === key.id
+                    ? "bg-black bg-opacity-75 text-lime-200"
+                    : "text-lime-200 hover:bg-black hover:bg-opacity-75 hover:blur-none rounded-r-3xl"
+                }`}
+              >
                 {key.title}
               </button>
             ))}
           </div>
 
           {/* Details Section */}
-          {keys.map((key,index) => (
-            <div className={`md:w-2/4 rounded-full${selectedKey?.id === key.id
-                ? "bg-lime-200 text-green-800 "
-                : "text-green-800  hover:bg-lime-100 hidden "
-              }`} key={index}>
-              {selectedKey ? (
-                <div className="bg-lime-200 p-6 h-full rounded-r-3xl ">
+          {keys.map((key, index) => (
+            <div
+              className={`md:w-2/4 sm:w-2/4 xsm:w-3/4 xsm:text-xs rounded-sm ${
+                selectedKey?.id === key.id
+                  ? "text-lime-200 scale-y-110"
+                  : "text-green-800 hover:bg-lime-200 hidden"
+              }`}
+              key={index}
+            >
+              {selectedKey && selectedKey.id === key.id ? (
+                <div className="bg-black bg-opacity-75 p-6 h-full rounded-r-3xl rounded-sm">
                   <h2 className="text-2xl font-bold mb-4">{selectedKey.title}</h2>
                   <p>{selectedKey.content}</p>
                 </div>
-              ) : (
-                <div className="bg-gray-200  p-6 rounded-lg h-full flex items-center justify-center">
-                  <p>Select a key to view details</p>
-                </div>
-              )}
+              ) : null}
             </div>
           ))}
         </div>

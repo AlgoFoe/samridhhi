@@ -9,7 +9,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      xsm:'400px',
+      xsm:'200px',
       sm: '640px',
       lg: '1024px',
       xl: '1280px',
@@ -17,6 +17,9 @@ const config: Config = {
       "max-md": { max: "767px" }, // Maximum width for screens smaller than 768px
     },
     extend: {
+      spacing: {
+        '5rem': '5rem',
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
